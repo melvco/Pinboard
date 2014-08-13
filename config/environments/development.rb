@@ -37,5 +37,5 @@ Rails.application.configure do
 
   #required for Heroku
   #set to actual host name
-  config.action_mailer.default_url_options = { :host => 'http://codys-pinboard.herokuapp.com'}
+ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
