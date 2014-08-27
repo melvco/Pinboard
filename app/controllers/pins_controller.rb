@@ -18,7 +18,7 @@ class PinsController < ApplicationController
   def create
     @pin = current_user.pins.build(pin_params)
     if @pin.save
-      redirect_to @pin, notice: 'Item was successfully Corked.'
+      redirect_to @pin, notice: 'Item added to corkboard.'
     else
       render action: 'new'
     end
@@ -26,7 +26,7 @@ class PinsController < ApplicationController
 
   def update
     if @pin.update(pin_params)
-      redirect_to @pin, notice: 'Item was successfully updated.'
+      redirect_to @pin, notice: 'Item updated.'
     else
       render action: 'edit'
     end
