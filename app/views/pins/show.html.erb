@@ -6,6 +6,15 @@
       </div>
       <div class="panel-body">
         <p><%= @pin.description %></p>
+
+<% @pin.tags.any? %>
+     <% @pin.tags.each do |tag| %>
+     <span class="label label-default">
+        <%= link_to tag.name, tag_path(tag.name) %>
+     </span>  
+<% end %>
+<br>
+
         <p><strong><%= @pin.user.name if @pin.user %></strong></p>
         <%= link_to pins_path do %>
               <span class="glyphicon glyphicon-arrow-left"></span>
@@ -17,7 +26,4 @@
               Edit
             <% end %>
             <% end %>
-  </div>
-    </div>
-  </div>
-</div>
+  
