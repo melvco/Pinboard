@@ -20,7 +20,7 @@
       
       <ul class="nav navbar-nav navbar-right">
 
-    
+ 
 
     <li><%= link_to root_path do %>
               <span class="glyphicon glyphicon-home"></span> Home
@@ -30,11 +30,17 @@
          <% if user_signed_in? %>
           <li>
             <%= link_to new_pin_path do %>
-              <span class="glyphicon glyphicon-pushpin"></span> Cork it
+              <span class="glyphicon glyphicon-plus"></span> New
             <% end %>
           </li>
+
+
+
+
+
           <li><%= link_to "Settings", edit_user_registration_path %>
-          </li>
+          </li>            
+
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign in", new_user_session_path %></li>
@@ -43,3 +49,4 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+

@@ -13,6 +13,7 @@ class PinsController < ApplicationController
     end  
 end
 
+
   def show
   end
 
