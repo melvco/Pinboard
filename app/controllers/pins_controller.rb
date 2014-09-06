@@ -5,6 +5,8 @@ class PinsController < ApplicationController
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
 
+
+
   def index
     if params[:tag].present? 
       @pins = Pin.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 12)
@@ -12,7 +14,7 @@ class PinsController < ApplicationController
       @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
     end  
 end
-
+  
 
   def show
   end
@@ -60,5 +62,5 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
   def pin_params
       params.require(:pin).permit(:description, :image, :tag_list)
-end
-end
+    end
+   end
